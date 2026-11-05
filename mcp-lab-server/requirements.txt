@@ -1,0 +1,2 @@
+# Runtime: the official MCP Python SDK, pinned. mcp 2.x needs Python 3.10 or newer.
+mcp==2.3.0

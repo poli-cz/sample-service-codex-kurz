@@ -1,0 +1,28 @@
+# Codex configuration for the lab MCP server. `python scripts/dev.py codex-config` prints this
+# block with the real paths of your checkout. By hand: copy the block into ~/.codex/config.toml
+# (or .codex/config.toml of a trusted project), replace /ABS/PATH with the absolute path of this
+# repository and use the Python inside .venv.
+#
+# Everything sits in one table on purpose: env is an inline table and the per-tool approval is a
+# dotted key. Codex adds its own tables to config.toml, sometimes right after this one, so a
+# [mcp_servers.lab.env] sub-table would not stay last and keys added below the table later would
+# land in the wrong table. Add new keys of this server inside the table, next to the others.
+
+[mcp_servers.lab]
+command = "/ABS/PATH/mcp-lab-server/.venv/bin/python"
+args = ["-m", "mcp_lab_server"]
+cwd = "/ABS/PATH/mcp-lab-server"
+# The server refuses writes too, unless LAB_ALLOW_WRITES = "1" is added here.
+env = { LAB_STATE_DIR = "/ABS/PATH/mcp-lab-server/var" }
+# Only the read-only tools are visible to the agent: set_instrument_status is not listed,
+# so the agent cannot call it, whatever a prompt or a ticket says.
+enabled_tools = ["list_instruments", "get_results"]
+# Ask before every call that the server does not mark read-only (readOnlyHint).
+default_tools_approval_mode = "writes"
+startup_timeout_sec = 20
+tool_timeout_sec = 30
+
+# Step 5 of exercise C7 (write tool with approval), in the same table:
+# env = { LAB_STATE_DIR = "/ABS/PATH/mcp-lab-server/var", LAB_ALLOW_WRITES = "1" }
+# enabled_tools = ["list_instruments", "get_results", "set_instrument_status"]
+# tools.set_instrument_status.approval_mode = "prompt"

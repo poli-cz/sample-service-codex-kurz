@@ -1,0 +1,7 @@
+build/
+out/
+compile_commands.json
+.cache/
+__pycache__/
+*.pyc
+vcpkg_installed/

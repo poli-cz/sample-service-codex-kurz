@@ -1,0 +1,64 @@
+# clang-tidy configuration for first-party code (src/, apps/).
+# Tests are not checked: GoogleTest macros trigger many false positives.
+#
+# Documented exceptions (disabled checks and why):
+#   modernize-use-trailing-return-type        style choice, the code base uses classic return types
+#   readability-identifier-length             short names (i, p, m) are fine in small scopes
+#   readability-magic-numbers,
+#   cppcoreguidelines-avoid-magic-numbers     duplicates of each other; named constants are used where
+#                                             the number has a domain meaning
+#   cppcoreguidelines-pro-bounds-pointer-arithmetic  needed for argv handling
+#   cppcoreguidelines-avoid-const-or-ref-data-members
+#                                             Scheduler keeps references to objects that outlive it
+#                                             (check exists from clang-tidy 16)
+#   bugprone-easily-swappable-parameters      too noisy for (position, id, assay) style signatures
+#   misc-include-cleaner                      include-what-you-use rules (clang-tidy 17+), too noisy
+#                                             with fmt, nlohmann/json and umbrella headers
+#   Checks that are new or stricter in clang-tidy 20 to 23, kept off so that every supported
+#   version gives the same result. Evaluate them one by one before switching any of them on:
+#   portability-avoid-pragma-once               the code base uses #pragma once on purpose
+#   readability-trailing-comma                  formatting is clang-format's job
+#   cppcoreguidelines-pro-bounds-avoid-unchecked-container-access
+#                                             operator[] on indices that are checked right before
+#   bugprone-exception-escape                   with libc++ it follows .at() and substr() into
+#                                             noexcept helpers whose indices are always valid
+#   bugprone-signed-bitwise                     flag enums combine int constants
+#   modernize-use-designated-initializers,
+#   modernize-use-integer-sign-comparison       style, one finding each
+#   llvmlibc-*, fuchsia-*, google-*, altera-*, android-*, abseil-*, zircon-*, llvm-*
+#                                             rules of other projects, not enabled at all
+#
+# src/labio/legacy has its own .clang-tidy with a larger list of exceptions, and
+# HeaderFilterRegex below deliberately leaves out src/labio/legacy/*.h.
+Checks: >
+  -*,
+  bugprone-*,
+  cert-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  misc-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  -modernize-use-trailing-return-type,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-avoid-const-or-ref-data-members,
+  -bugprone-easily-swappable-parameters,
+  -misc-include-cleaner,
+  -portability-avoid-pragma-once,
+  -readability-trailing-comma,
+  -cppcoreguidelines-pro-bounds-avoid-unchecked-container-access,
+  -bugprone-exception-escape,
+  -bugprone-signed-bitwise,
+  -modernize-use-designated-initializers,
+  -modernize-use-integer-sign-comparison
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*[/\\](apps|labcore|labsched)[/\\].*|.*[/\\]labio[/\\](include|src)[/\\].*'
+FormatStyle: file
+CheckOptions:
+  - key: readability-function-cognitive-complexity.Threshold
+    value: '25'

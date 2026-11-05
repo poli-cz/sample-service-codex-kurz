@@ -1,0 +1,452 @@
+[
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-01T06:00:00Z",
+  "value": 5.48
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-01T06:00:00Z",
+  "value": 5.52
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-01T06:10:00Z",
+  "value": 4.02
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-01T06:20:00Z",
+  "value": 50.8
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-01T06:20:00Z",
+  "value": 49.6
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-02T06:00:00Z",
+  "value": 5.61
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-02T06:00:00Z",
+  "value": 5.6
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-02T06:10:00Z",
+  "value": 3.95
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-02T06:20:00Z",
+  "value": 49.1
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-02T06:20:00Z",
+  "value": 50.9
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-03T06:00:00Z",
+  "value": 5.39
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-03T06:00:00Z",
+  "value": 5.47
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-03T06:10:00Z",
+  "value": 4.08
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-03T06:20:00Z",
+  "value": 51.6
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-03T06:20:00Z",
+  "value": 51.2
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-04T06:00:00Z",
+  "value": 5.55
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-04T06:00:00Z",
+  "value": 5.66
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-04T06:10:00Z",
+  "value": 4.11
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-04T06:20:00Z",
+  "value": 48.7
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-04T06:20:00Z",
+  "value": 48.8
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-05T06:00:00Z",
+  "value": 5.7
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-05T06:00:00Z",
+  "value": 5.58
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-05T06:10:00Z",
+  "value": 3.97
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-05T06:20:00Z",
+  "value": 50.2
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-05T06:20:00Z",
+  "value": 50.1
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-06T06:00:00Z",
+  "value": 5.44
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-06T06:00:00Z",
+  "value": 5.73
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-06T06:10:00Z",
+  "value": 4.01
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-06T06:20:00Z",
+  "value": 52.3
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-06T06:20:00Z",
+  "value": 49.4
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-07T06:00:00Z",
+  "value": 5.52
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-07T06:00:00Z",
+  "value": 5.81
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-07T06:10:00Z",
+  "value": 4.24
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-07T06:20:00Z",
+  "value": 49.9
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-07T06:20:00Z",
+  "value": 50.6
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-08T06:00:00Z",
+  "value": 5.58
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-08T06:00:00Z",
+  "value": 5.77
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-08T06:10:00Z",
+  "value": 3.99
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-08T06:20:00Z",
+  "value": 50.5
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-08T06:20:00Z",
+  "value": 51.0
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-09T06:00:00Z",
+  "value": 5.47
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-09T06:00:00Z",
+  "value": 5.95
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-09T06:10:00Z",
+  "value": 4.05
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-09T06:20:00Z",
+  "value": 48.4
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-09T06:20:00Z",
+  "value": 49.2
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-10T06:00:00Z",
+  "value": 5.63
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "GLU",
+  "lot": "QC-GLU-L1-2611",
+  "target_mean": 5.5,
+  "target_sd": 0.2,
+  "time": "2026-11-10T06:00:00Z",
+  "value": 5.98
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "K",
+  "lot": "QC-K-L1-2609",
+  "target_mean": 4.0,
+  "target_sd": 0.1,
+  "time": "2026-11-10T06:10:00Z",
+  "value": 3.96
+ },
+ {
+  "instrument_id": "AN-01",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-10T06:20:00Z",
+  "value": 51.1
+ },
+ {
+  "instrument_id": "AN-02",
+  "assay": "CRP",
+  "lot": "QC-CRP-L2-2610",
+  "target_mean": 50.0,
+  "target_sd": 2.0,
+  "time": "2026-11-10T06:20:00Z",
+  "value": 50.3
+ }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "sample-service",
+  "version-string": "0.4.0",
+  "description": "Sample queue and measurement service for a simulated lab analyzer",
+  "dependencies": [
+    "fmt",
+    "nlohmann-json",
+    "gtest"
+  ],
+  "builtin-baseline": "e6f9e70a29a3e80a1fc510d8503304315447112f"
+}

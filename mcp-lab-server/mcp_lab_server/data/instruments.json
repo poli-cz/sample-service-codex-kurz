@@ -1,0 +1,26 @@
+[
+  {
+    "id": "AN-01",
+    "name": "Chemistry analyzer 1",
+    "model": "SIM-CHEM-100 (simulated)",
+    "location": "Core lab, line A",
+    "status": "online",
+    "assays": ["GLU", "K", "CRP"]
+  },
+  {
+    "id": "AN-02",
+    "name": "Chemistry analyzer 2",
+    "model": "SIM-CHEM-100 (simulated)",
+    "location": "Core lab, line B",
+    "status": "online",
+    "assays": ["GLU", "CRP"]
+  },
+  {
+    "id": "AN-03",
+    "name": "Immunoassay analyzer",
+    "model": "SIM-IA-20 (simulated)",
+    "location": "Stat lab",
+    "status": "maintenance",
+    "assays": ["CRP"]
+  }
+]

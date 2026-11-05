@@ -1,0 +1,46 @@
+# Legacy firmware parser, C style, ported from the old acquisition daemon.
+# Inherits the root configuration and switches off exactly the checks that
+# fire on legacy_result_parser.cpp (verified with clang-tidy 14, 19 and 23). Each
+# exception disappears when the parser is rewritten.
+#   cppcoreguidelines-avoid-c-arrays, modernize-avoid-c-arrays   fixed char buffers of the protocol
+#   cppcoreguidelines-avoid-non-const-global-variables         static split buffers
+#   cppcoreguidelines-init-variables, readability-isolate-declaration   C89 style declarations
+#   cppcoreguidelines-pro-bounds-array-to-pointer-decay        char buffers passed to C string functions
+#   cppcoreguidelines-pro-bounds-constant-array-index          indexing with computed field numbers
+#   readability-function-cognitive-complexity                  lr_parse is one long function
+#   readability-braces-around-statements, readability-else-after-return   original formatting
+#   readability-implicit-bool-conversion                       C truth tests on pointers and chars
+#   modernize-use-nullptr, modernize-deprecated-headers        C headers and 0 as null pointer
+#   cert-err34-c                                               atoi without conversion error checks
+#   misc-use-anonymous-namespace                               file-static helpers (clang-tidy 16+)
+#   bugprone-switch-missing-default-case                       lr_errstr switch (clang-tidy 18+)
+#   bugprone-unchecked-string-to-number-conversion             new name of cert-err34-c (clang-tidy 21+)
+#   bugprone-unhandled-code-paths                              lr_errstr switch (clang-tidy 23)
+#   modernize-avoid-c-style-cast                               C casts of the old code (clang-tidy 23)
+#   readability-inconsistent-ifelse-braces,
+#   readability-redundant-nested-if                            original formatting (clang-tidy 23)
+# The header legacy_result_parser.h is excluded from checks by HeaderFilterRegex
+# in the root .clang-tidy (macros, typedef and C arrays of the old protocol struct).
+InheritParentConfig: true
+Checks: >
+  -cppcoreguidelines-avoid-c-arrays,
+  -modernize-avoid-c-arrays,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  -cppcoreguidelines-init-variables,
+  -readability-isolate-declaration,
+  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -cppcoreguidelines-pro-bounds-constant-array-index,
+  -readability-function-cognitive-complexity,
+  -readability-braces-around-statements,
+  -readability-else-after-return,
+  -readability-implicit-bool-conversion,
+  -modernize-use-nullptr,
+  -modernize-deprecated-headers,
+  -cert-err34-c,
+  -misc-use-anonymous-namespace,
+  -bugprone-switch-missing-default-case,
+  -bugprone-unchecked-string-to-number-conversion,
+  -bugprone-unhandled-code-paths,
+  -modernize-avoid-c-style-cast,
+  -readability-inconsistent-ifelse-braces,
+  -readability-redundant-nested-if
