@@ -1,0 +1,20 @@
+{"event":"submit","sample_id":"S-310041","status":"queued"}
+{"event":"submit","sample_id":"S-310042","status":"queued"}
+{"event":"submit","sample_id":"S-310043","status":"queued"}
+{"event":"submit","sample_id":"S-310044","status":"queued"}
+{"event":"submit","sample_id":"S-310045","status":"queued"}
+{"event":"submit","sample_id":"S-310046","status":"queued"}
+{"event":"load","loaded":4,"on_rack":4}
+{"event":"submit","sample_id":"S-319007","status":"loaded_by_preemption"}
+{"event":"log","message":"preempted S-319007 at position 4"}
+{"assay":"CRP","concentration":426.68309247887726,"event":"result","flags":["H","D"],"position":1,"sample_id":"S-310042","signal":36006.3,"unit":"mg/L"}
+{"assay":"GLU","concentration":4.5067736185383245,"event":"result","flags":[],"position":2,"sample_id":"S-310041","signal":1919.5,"unit":"mmol/L"}
+{"assay":"GLU","concentration":18.8698752228164,"event":"result","flags":[],"position":3,"sample_id":"S-310043","signal":7675.0,"unit":"mmol/L"}
+{"assay":"","concentration":0.0,"event":"result","flags":["E"],"position":4,"sample_id":"","signal":0.0,"unit":""}
+{"errors":0,"event":"cycle_done","results":4,"waiting":3}
+{"assay":"K","concentration":8.689403942056519,"event":"result","flags":["HEM"],"position":1,"sample_id":"S-319007","signal":4361.2,"unit":"mmol/L"}
+{"assay":"GLU","concentration":0.6119786096256687,"event":"result","flags":["L"],"position":2,"sample_id":"S-310045","signal":358.8,"unit":"mmol/L"}
+{"assay":"CRP","concentration":46.924922664942976,"event":"result","flags":[],"position":3,"sample_id":"S-310046","signal":4001.7,"unit":"mg/L"}
+{"errors":0,"event":"cycle_done","results":3,"waiting":0}
+{"errors":0,"event":"cycle_done","results":0,"waiting":0}
+{"event":"bye"}
