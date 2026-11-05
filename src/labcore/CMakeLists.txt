@@ -3,7 +3,8 @@ add_library(labcore
   src/measurement.cpp
   src/calibration.cpp
   src/statistics.cpp
-  src/sample_queue.cpp)
+  src/sample_queue.cpp
+  src/qc_rules.cpp)
 add_library(lab::core ALIAS labcore)
 
 target_include_directories(labcore PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

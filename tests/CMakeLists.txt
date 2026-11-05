@@ -9,7 +9,8 @@ sample_add_test_suite(labcore_tests
   labcore/sample_test.cpp
   labcore/calibration_test.cpp
   labcore/statistics_test.cpp
-  labcore/sample_queue_test.cpp)
+  labcore/sample_queue_test.cpp
+  labcore/qc_rules_test.cpp)
 target_link_libraries(labcore_tests PRIVATE lab::core)
 
 sample_add_test_suite(labio_tests
