@@ -12,9 +12,6 @@ decide which of its tools the agent may use. All data is invented.
 
 The read-only tools carry the MCP annotation `readOnlyHint`, the write tool does not.
 
-**Exercise state:** on this branch `get_results` and `set_instrument_status` are TODO in
-`mcp_lab_server/store.py`; 16 of the 20 tests fail until they are implemented.
-
 ## Requirements
 
 - Python 3.10 or newer. The official MCP Python SDK (`mcp`) requires 3.10 in every release

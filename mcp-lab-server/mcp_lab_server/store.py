@@ -104,20 +104,42 @@ class LabStore:
         Each result carries the control lot with its target mean and SD, so the caller can
         evaluate Westgard rules.
         """
-        # TODO (exercise C7): implement, the tests in tests/test_store.py say exactly how.
-        # - validate instrument_id with self._instrument() (unknown id -> StoreError),
-        # - assay: None or an upper-case code (ASSAY) that the instrument runs,
-        # - limit: 1 to MAX_LIMIT, keep only the newest `limit` results,
-        # - results from qc_results.json of this instrument (and assay), oldest first,
-        # - return {"instrument_id": ..., "assay": ..., "results": [...]}.
-        raise NotImplementedError("get_results is not implemented yet")
+        instrument = self._instrument(instrument_id)
+        if assay is not None:
+            if not ASSAY.match(assay):
+                raise StoreError("assay must be an upper-case code like GLU")
+            if assay not in instrument["assays"]:
+                raise StoreError(f"instrument {instrument_id} does not run assay {assay}")
+        if not 1 <= limit <= MAX_LIMIT:
+            raise StoreError(f"limit must be between 1 and {MAX_LIMIT}")
+        results = [
+            r
+            for r in self._load("qc_results.json")
+            if r["instrument_id"] == instrument_id and (assay is None or r["assay"] == assay)
+        ]
+        results.sort(key=lambda r: r["time"])
+        return {"instrument_id": instrument_id, "assay": assay, "results": results[-limit:]}
 
     # -- write tool --------------------------------------------------------------------
 
     def set_instrument_status(self, instrument_id: str, status: str, reason: str) -> Dict[str, Any]:
         """Records a status change. Refused unless the server runs with LAB_ALLOW_WRITES=1."""
-        # TODO (exercise C7): implement after get_results. Refuse unless allow_writes,
-        # validate status (STATUSES) and reason (3 to MAX_REASON characters, whitespace
-        # collapsed), append one JSON line to self._status_log and return the change with
-        # instrument_id, old_status, new_status, reason and changed_at.
-        raise NotImplementedError("set_instrument_status is not implemented yet")
+        if not self._settings.allow_writes:
+            raise StoreError("writes are disabled on this server (LAB_ALLOW_WRITES is not 1)")
+        if status not in STATUSES:
+            raise StoreError(f"status must be one of {', '.join(STATUSES)}")
+        reason = " ".join(reason.split())  # no newlines or control whitespace in the log
+        if not 3 <= len(reason) <= MAX_REASON:
+            raise StoreError(f"reason must have 3 to {MAX_REASON} characters")
+        instrument = self._instrument(instrument_id)
+        change = {
+            "instrument_id": instrument_id,
+            "old_status": instrument["status"],
+            "new_status": status,
+            "reason": reason,
+            "changed_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        }
+        self._settings.state_dir.mkdir(parents=True, exist_ok=True)
+        with open(self._status_log, "a", encoding="utf-8") as f:
+            f.write(json.dumps(change) + "\n")
+        return change
