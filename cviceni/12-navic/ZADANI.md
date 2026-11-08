@@ -161,7 +161,7 @@ prostředí; při prvním použití stáhne tabulku kódování). Bez něj skrip
 
 ## 1. den
 
-### Z 1. dne, slide 38: Kolik z první zprávy je vaše zadání
+### Z 1. dne, slide 58: Kolik z první zprávy je vaše zadání
 
 **Čas:** 15 minut · **Výchozí větev:** `reference/agents-md`
 
@@ -208,7 +208,7 @@ a nastavení.
 - Víte, kolik tokenů ve vaší první zprávě stojí seznam skillů a AGENTS.md.
 - Víte, kolik z toho přidala vaše osobní konfigurace (rozdíl kroků 2 a 3), a platíte to v každé zprávě.
 
-### Z 1. dne, slidy 44 a 45: Kvíz: projde to?
+### Z 1. dne, slidy 37 a 38: Kvíz: projde to?
 
 **Čas:** 15 minut · **Výchozí větev:** `main`
 
@@ -283,14 +283,14 @@ Správných odpovědí může být víc.
    hlásit něco jiného, pak si zapište, co hlásí ten váš.
 
 4. Změny zahoďte: `git restore .`, pak `git switch main`.
-5. Porovnejte svou odpověď, odpověď agenta a výsledek. Rozbor je až na slidu 45 1. dne.
+5. Porovnejte svou odpověď, odpověď agenta a výsledek. Rozbor je až na slidu 38 1. dne.
 
 **Hotovo, když**
 
 - Víte, které z odpovědí A až D platí, a výsledek obou presetů umíte vysvětlit.
 - Víte, jestli se agent trefil, a co by takovou chybu v týmu chytilo dřív než revize.
 
-### Z 1. dne, slide 78: Kontrolní otázka před úlohou
+### Z 1. dne, slide 99: Kontrolní otázka před úlohou
 
 **Čas:** 10 minut · **Výchozí větev:** `reference/agents-md` (nebo vaše větev `c3-agents-md` z C3)
 
@@ -332,7 +332,7 @@ když agent vaše sekce nevyjmenuje, úlohu nepouštějte.
 - Ve větvi `reference/agents-md` odpověď agenta sedí s výpisem z kroku 2.
 - Víte, co agent odpoví ve větvi `main`, a víte, co se změní, když Codex běží v `src/labio`.
 
-### Z 1. dne, slidy 81 a 83: Skill new-gtest-suite
+### Z 1. dne, slide 102: Skill new-gtest-suite
 
 **Čas:** 20 minut · **Výchozí větev:** `main`
 
@@ -406,7 +406,7 @@ nespustí a `ctest` je přesto zelený. Hodí se i jako hotový vzor k cvičení
 - Nové testy jsou zapsané v `tests/CMakeLists.txt` a `ctest -N` je vypíše.
 - `python scripts/check_all.py debug tidy` projde a diff agenta je jen v `tests/`.
 
-### Z 1. dne, slide 88: Orientační zadání nad lr_parse
+### Z 1. dne, slide 108: Orientační zadání nad lr_parse
 
 **Čas:** 15 minut · **Výchozí větev:** `main`
 
@@ -445,7 +445,7 @@ Na stejném parseru pak stojí cvičení C6.
 - Máte seznam podivností s vaším rozhodnutím u každé.
 - `git status` je čistý.
 
-### Z 1. dne, slide 95: Agent navrhne scénáře, hodnoty potvrdíte vy
+### Z 1. dne, slide 116: Agent navrhne scénáře, hodnoty potvrdíte vy
 
 **Čas:** 15 minut · **Výchozí větev:** `cviceni/04-start`
 
@@ -483,7 +483,7 @@ Nejlépe před C4, nebo jako jeho rozšíření.
 
 ## 2. den
 
-### Z 2. dne, slide 13: Výstup gcov jako zadání na testy
+### Z 2. dne, slide 155: Výstup gcov jako zadání na testy
 
 **Čas:** 30 minut · **Výchozí větev:** vaše větev `fix/lab-214` z cvičení C5, jinak `main` ·
 **Volitelné, potřebujete:** GCC a gcov (preset `coverage` je jen pro GCC)
@@ -538,7 +538,7 @@ jen zavolá a nic neověří. Pokrytí stoupne, jistota ne.
 - Každý nový test něco ověřuje a diff je jen v `tests/`.
 - `debug` a `tidy` projdou (a `asan` ve větvi s opravou z C5).
 
-### Z 2. dne, slide 14: gdb jako příkaz, ne jako okno
+### Z 2. dne, slide 152: gdb jako příkaz, ne jako okno
 
 **Čas:** 15 minut · **Výchozí větev:** `main` · **Volitelné, potřebujete:** gdb a build presetu `asan`
 přeložený GCC nebo Clangem
@@ -584,7 +584,7 @@ Když ne, gdb spustíte vy a výstup agentovi vložíte.
 - Vysvětlení agenta se opírá jen o řádky, které v backtrace a v kódu opravdu jsou.
 - Víte, jestli gdb v sandboxu Codexu na vašem počítači běží.
 
-### Z 2. dne, slide 45: Tři průzkumníci a sekce Sub-agents
+### Z 2. dne, slide 182: Tři průzkumníci a sekce Sub-agents
 
 **Čas:** 25 minut · **Výchozí větev:** `reference/agents-md`
 
@@ -649,7 +649,7 @@ pomocníky proto patří do AGENTS.md.
 - Máte tabulku nálezů ze všech tří knihoven se souborem a řádkem a dva řádky jste ověřili v kódu.
 - Víte, kolik běh se třemi pomocníky stál.
 
-### Z 2. dne, slide 63: První úloha přes GitLab MCP
+### Z 2. dne, slide 211: První úloha přes GitLab MCP
 
 **Čas:** 20 minut · **Výchozí větev:** váš projekt v GitLabu · **Volitelné, potřebujete:**
 
@@ -703,7 +703,7 @@ je jen čtení a agent dostane jen čtyři nástroje pro čtení z 56, které Gi
 - Agent má k dispozici jen nástroje pro čtení.
 - Sekce 4 vašeho `PLAN.md` uvádí, které nástroje GitLabu tým povolí.
 
-### Z 2. dne, slide 85: Kam s pravidlem: od prosby po zákaz
+### Z 2. dne, slide 238: Kam s pravidlem: od prosby po zákaz
 
 **Čas:** 10 minut · **Výchozí větev:** bez repozitáře
 
@@ -719,7 +719,7 @@ v AGENTS.md. Agent to většinou dodrží, ale ne vždy, a právě ta výjimka j
 | sandbox (`-s workspace-write`) | vždy; ohrada procesů, ne text | zápis jen do repa, bez sítě |
 | `requirements.toml` (spravovaná konfigurace od IT) | vždy; uživatel ho nepřebije | schvalování nejde vypnout, MCP jen schválené |
 
-Prosba je nahoře, zákaz dole. Ukázka hooku je na slidu 84 2. dne.
+Prosba je nahoře, zákaz dole. Ukázka hooku je na slidu 236 2. dne.
 
 **Kroky**
 
@@ -734,7 +734,7 @@ Prosba je nahoře, zákaz dole. Ukázka hooku je na slidu 84 2. dne.
 - Máte tabulku tří pravidel se stupněm, mechanismem a vlastníkem.
 - U každého pravidla umíte říct, proč nestačí stupeň nad ním.
 
-### Z 2. dne, slide 98: Varianta D v Pythonu nebo C#
+### Z 2. dne, slide 251: Varianta D v Pythonu nebo C#
 
 **Čas:** 45 minut · **Výchozí větev:** `main`
 
@@ -810,7 +810,7 @@ virtuální prostředí. C# v kurzu ukázku nemá; použijte tabulku na vlastní
   `python scripts/check_all.py debug` z kořene).
 - Diff je jen ve `scripts/`, máte `review.md` s rozhodnutími a `mr.md` s příkazy a výsledky.
 
-### Z 2. dne, slide 99: Stejná úloha s levnějším modelem
+### Z 2. dne, slide 245: Stejná úloha s levnějším modelem
 
 **Čas:** 60 minut · **Výchozí větev:** `cviceni/10-start`
 
@@ -859,7 +859,7 @@ spotřebu a výsledek.
 - Máte vyplněnou tabulku pro oba běhy.
 - Umíte říct, u kterého kroku levnější model stačil a kde ne.
 
-### Z 2. dne, slide 104: Kdo vlastní co (RACI) pro váš tým
+### Z 2. dne, slide 257: Kdo vlastní co (RACI) pro váš tým
 
 **Čas:** 15 minut · **Výchozí větev:** bez repozitáře (váš `PLAN.md` z cvičení C11)
 
@@ -895,7 +895,7 @@ role, ne funkce: jeden člověk, který slučuje změny AGENTS.md a skillů a je
 
 ## Bonus
 
-### Bonus, slide 110: codex exec se schématem výstupu
+### Bonus, slide 264: codex exec se schématem výstupu
 
 **Čas:** 15 minut · **Výchozí větev:** `main`
 
@@ -965,7 +965,7 @@ JSON Schema a poslední odpověď agenta mu musí odpovídat. Skript pak čte JS
 - Dva nálezy jste ověřili v kódu.
 - Víte, kde je ve výstupu `--json` spotřeba tokenů.
 
-### Bonus, slide 111: Revize MR v GitLab CI
+### Bonus, slide 265: Revize MR v GitLab CI
 
 **Čas:** 30 minut · **Výchozí větev:** váš testovací projekt v GitLabu · **Volitelné, potřebujete:**
 
@@ -1034,7 +1034,7 @@ CI je revize jen pro čtení s výsledkem jako artefakt; komentáře do MR až s
 - Pipeline MR má artefakt `review.md` a klíč se v logu jobu neobjevil.
 - Víte, kolik jeden běh stál (spotřeba v přehledu API).
 
-### Bonus, slide 114: Úloha v Codex cloud
+### Bonus, slide 267: Úloha v Codex cloud
 
 **Čas:** 30 minut · **Výchozí větev:** `cviceni/10-start` ve vašem forku na GitHubu · **Volitelné, potřebujete:**
 
@@ -1081,7 +1081,7 @@ vyberete jeden a ostatní zahodíte. Příkaz `codex cloud` je ve verzi 0.163.0 
 - Porovnali jste oba pokusy a umíte říct, proč jste vybrali ten svůj.
 - Vybraný diff je u vás v pracovní kopii a `debug`, `asan` a `tidy` projdou.
 
-### Bonus, slidy 116 a 120: Plán v souboru: ExecPlan a Mikado
+### Bonus, slidy 269 a 273: Plán v souboru: ExecPlan a Mikado
 
 **Čas:** 30 + 30 minut · **Výchozí větev:** `cviceni/10c-start` (ExecPlan) a `main` (Mikado)
 

@@ -54,10 +54,18 @@ mohl dodržet a ověřit.
    git commit -m "Add AGENTS.md"
    ```
 
-4. **Po (10 minut).** Codex načítá AGENTS.md při startu, proto **nová** session. Stejná malá úloha.
-   Zapište si totéž co v kroku 1 a porovnejte.
+4. **Po (10 minut).** Codex načítá AGENTS.md při startu, proto **nová** session. Nejdřív ověřte, že
+   ho Codex modelu opravdu pošle. Model se při tom nevolá:
 
-5. **Porovnání s referencí (5 minut).** Referenční AGENTS.md je ve větvi `reference/agents-md`:
+   ```sh
+   codex debug prompt-input > ../vstup.json
+   ```
+
+   Ve `vstup.json` najděte „AGENTS.md instructions for“ a za tím nadpisy svých sekcí. Když tam nejsou,
+   session nespouštějte a zjistěte proč (soubor jinde než v kořeni repa, Codex spuštěný mimo repo).
+   Pak nová session a stejná malá úloha. Zapište si totéž co v kroku 1 a porovnejte.
+
+5. **Porovnání se vzorem (5 minut).** Vzorový AGENTS.md je ve větvi `reference/agents-md`:
 
    ```sh
    git diff c3-agents-md origin/reference/agents-md -- AGENTS.md src/labio/AGENTS.md
