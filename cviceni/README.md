@@ -10,7 +10,7 @@ kurzu bez slidů. Každé cvičení začíná ve vlastní větvi, takže můžet
 | [C2 Slabé a dobré zadání](02-zadani/ZADANI.md) | 40 | `main` |
 | [C3 AGENTS.md pro vzorový projekt, C3b skill](03-agents-md/ZADANI.md) | 50 + 20 | `main`, pak `reference/agents-md` |
 | [C4 LAB-201: TDD a implementace](04-tdd-westgard/ZADANI.md) | 80 | `cviceni/04-start` |
-| [C5 LAB-214: ztracený vzorek](05-ztraceny-vzorek/ZADANI.md) | 55 | `cviceni/05-start` |
+| [C5 LAB-214: ztracený vzorek (samostudium)](05-ztraceny-vzorek/ZADANI.md) | 55 | `cviceni/05-start` |
 | [C6 Refaktoring legacy parseru (volitelně)](06-legacy-refaktoring/ZADANI.md) | 40 | `main` |
 | [C7 Vlastní MCP server](07-mcp-server/ZADANI.md) | 50 | `main`, složka `mcp-lab-server` |
 | [C8 Sub-agenti a dvě úlohy naráz](08-subagenti-worktrees/ZADANI.md) | 40 | `main` |
@@ -18,6 +18,7 @@ kurzu bez slidů. Každé cvičení začíná ve vlastní větvi, takže můžet
 | [C10 Závěrečné cvičení](10-zaverecne/ZADANI.md) | 55 | `cviceni/10-start`, `cviceni/10c-start` |
 | [C11 Plán zavedení pro váš tým](11-plan-zavedeni/ZADANI.md) | 15 | bez repozitáře |
 | [Úlohy navíc ze slidů](12-navic/ZADANI.md) | podle úlohy | podle úlohy |
+| [C13 Naučte agenta váš projekt: AGENTS.md, skill a hook](13-naucte-agenta/ZADANI.md) (2. den ráno) | 65 | samostatné repo [analyzer-link](https://github.com/poli-cz/analyzer-link) |
 
 ## Větve
 
@@ -35,5 +36,5 @@ kurzu bez slidů. Každé cvičení začíná ve vlastní větvi, takže můžet
 Struktura zadání, kostra AGENTS.md, konfigurace MCP, režimy oprávnění a kontrolní seznam revize
 najdete v [taháku kurzu](TAHAK.md).
 
-Vzorová řešení v repozitáři nejsou. Mezi pokusy vrátíte pracovní kopii do výchozího stavu příkazy
+Vzorová řešení v repozitáři nejsou, kromě složky `13-naucte-agenta/vzor/` pro poslední krok C13. Mezi pokusy vrátíte pracovní kopii do výchozího stavu příkazy
 `git restore .` a `git clean -fd`.
