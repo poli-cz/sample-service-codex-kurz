@@ -31,7 +31,8 @@ OLD_CODES = [
 
 
 def run(cmd, cwd, stdin=None):
-    return subprocess.run(cmd, cwd=cwd, input=stdin, capture_output=True, text=True)
+    return subprocess.run(cmd, cwd=cwd, input=stdin, capture_output=True, text=True,
+                          encoding="utf-8", errors="replace")
 
 
 def preset(repo, name):
@@ -54,6 +55,10 @@ def cli_path(repo):
 
 
 def main(argv):
+    # Czech output must not crash on a Windows console or pipe with a legacy code page.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     args = [a for a in argv if not a.startswith("--")]
     if len(args) != 1:
         print(__doc__)
