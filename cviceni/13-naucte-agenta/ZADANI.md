@@ -31,7 +31,9 @@ ctest --preset debug
 Co repo dělá: laboratorní analyzátor posílá textové řádky a knihovna je překládá.
 `HB|AN-07|2.6` je heartbeat (přístroj hlásí, že žije, a verzi protokolu, kterou mluví),
 `RES|AN-07|S-1001|GLU|5.4|mmol/L` je výsledek, `ERR|AN-07|9|S-1003` je chyba přístroje s číslem
-(9 = došla reagencie). Chyby knihovna předá do LIS (laboratorní informační systém) s jedním písmenem,
+(9 = došla reagencie). **Reagencie** je činidlo: chemikálie, kterou přístroj smíchá se vzorkem, aby mohl
+měřit. Dodává se v šaržích (výrobních várkách) s datem exspirace a prošlá šarže může měřit špatně.
+Chyby knihovna předá do LIS (laboratorní informační systém) s jedním písmenem,
 podle kterého LIS rozhodne, co s výsledky:
 
 | příznak | co se stalo | co LIS udělá |
