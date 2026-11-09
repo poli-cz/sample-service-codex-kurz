@@ -21,6 +21,52 @@ spouštějte jako `python` nebo `python3` podle vaší instalace. Pomocný skrip
 stejně v každém terminálu a Python v `.venv` najde sám. Má tyto příkazy: `setup` (založí `.venv`), `test` (pytest),
 `smoke` (surové JSON-RPC), `run` (spustí server) a `codex-config` (blok konfigurace pro Codex).
 
+## Vlastní server od nuly (15 minut, lektor ukazuje v bloku 5)
+
+Než budete dokončovat připravený server, postavte si nejmenší vlastní: server nad tikety uloženými
+jako soubory Markdown. Hotové soubory jsou ve složce `od-nuly/` vedle tohoto zadání
+(`server.py` a `tickets/`). Postup v PowerShellu, mimo repo kurzu:
+
+1. **Prostředí a balíček.**
+
+   ```powershell
+   mkdir tickets-mcp; cd tickets-mcp
+   python -m venv .venv
+   .venv\Scripts\python -m pip install "mcp==2.3.0"
+   ```
+
+   Do složky `tickets\` zkopírujte `LAB-401.md` a `LAB-402.md` z `od-nuly/tickets/`.
+
+2. **server.py.** Zkopírujte `od-nuly/server.py`, nebo ho napište podle slidu „Krok 2: celý server je
+   25 řádků“. Každý nástroj je funkce s dekorátorem `@server.tool(annotations=READ_ONLY)`; docstring je
+   popis, který čte model, typy parametrů jsou schéma, které model vyplní. Bez anotace jen pro čtení
+   se vás Codex zeptá na každé volání.
+
+3. **Ověření bez agenta.**
+
+   ```powershell
+   .venv\Scripts\python
+   >>> import server
+   >>> server.list_tickets()
+   ['LAB-401', 'LAB-402']
+   ```
+
+4. **Registrace v Codexu** (ze složky `tickets-mcp`, cesty jsou absolutní):
+
+   ```powershell
+   codex mcp add tickets --env "TICKETS_DIR=$PWD\tickets" -- "$PWD\.venv\Scripts\python.exe" "$PWD\server.py"
+   codex mcp list
+   ```
+
+5. **Dotaz.** Nová session v jiné složce, `/mcp` ukáže server `tickets` se dvěma nástroji. Zadání:
+
+   > Použij MCP server `tickets`. Vypiš všechny tikety a k LAB-401 napiš jednou větou, co je špatně.
+
+   Po cvičení server odeberte: `codex mcp remove tickets`.
+
+Místo složky s tikety si pak můžete dosadit vlastní zdroj (API Jiry, GitLabu, výsledky buildu). Token
+patří jen do proměnné prostředí (`--env`), nikdy do kódu.
+
 ## Kroky
 
 1. **Prostředí a testy (5 minut).**
