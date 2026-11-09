@@ -15,7 +15,7 @@ ví tým. Nejdřív to uvidíte na vlastní obrazovce, pak mu to předáte třem
 
 ## Výchozí stav
 
-Nové repo **analyzer-link**: malá C++ knihovna, která dekóduje rámce z laboratorního analyzátoru
+Nové repo **analyzer-link**: malá C++ knihovna, která překládá textové řádky z laboratorního analyzátoru
 a posílá chyby přístroje do LIS. Bez AGENTS.md, bez dokumentace, bez tiketů. Klonujte ho **vedle**
 repa kurzu, ne dovnitř:
 
@@ -27,6 +27,22 @@ cmake --preset debug
 cmake --build --preset debug
 ctest --preset debug
 ```
+
+Co repo dělá: laboratorní analyzátor posílá textové řádky a knihovna je překládá.
+`HB|AN-07|2.6` je heartbeat (přístroj hlásí, že žije, a verzi protokolu, kterou mluví),
+`RES|AN-07|S-1001|GLU|5.4|mmol/L` je výsledek, `ERR|AN-07|9|S-1003` je chyba přístroje s číslem
+(9 = došla reagencie). Chyby knihovna předá do LIS (laboratorní informační systém) s jedním písmenem,
+podle kterého LIS rozhodne, co s výsledky:
+
+| příznak | co se stalo | co LIS udělá |
+|---|---|---|
+| `S` | problém se vzorkem | požádá o nový vzorek |
+| `R` | došla reagencie, nic se nezměřilo | počká na doplnění a změří znovu |
+| `H` | porucha přístroje | počká na servis |
+| `Q` | už naměřené výsledky mohou být špatně | výsledky nevydá, dokud je někdo neprověří |
+
+Ve složce `tests/data/recorded/` jsou nahrávky: skutečné řádky ze dvou přístrojů a co z nich má
+knihovna vypsat. Podle nich běží regresní test.
 
 Kontrolní skript je v repu kurzu, agent ho nevidí. Spouštějte ho z kořene `analyzer-link`
 (na Windows `..\sample-service\cviceni\...`, cesta podle toho, kam jste naklonovali repo kurzu):
@@ -57,18 +73,18 @@ Toto vám řekl vedoucí týmu. Rozhodněte, kam která věta patří.
 1. **Hotovo** znamená: build a testy projdou v presetu `debug` **i** `tidy`
    (`cmake --preset tidy`, `cmake --build --preset tidy`, `ctest --preset tidy`).
    `NOLINT`, `-Wno-*` ani úprava `.clang-tidy` a `CMakePresets.json` nejsou cesta, jak projít.
-2. **Kódy chyb jsou na drátě.** Hodnoty `InstrumentError` posílá firmware a ukládají se v archivech
-   výsledků. Nikdy nepřeřazovat ani nevkládat doprostřed, nový kód se přidává na konec a jeho hodnota
-   musí sedět s kódem z firmwaru.
-3. **Každý nový kód chyby je změna protokolu:** `kProtocolMinor` v `include/alink/protocol.hpp`
-   o jedna nahoru. Firmware 3.2 mluví protokolem 2.7; bez toho link u každého heartbeatu hlásí
-   „newer than supported“.
+2. **Číslo chyby se nikdy nemění.** Čísla v `InstrumentError` posílá firmware přístroje a ukládají se
+   i do archivů výsledků. Seznam nikdy nepřeřazovat ani do něj nevkládat doprostřed, nová chyba se
+   přidává na konec a její číslo musí sedět s číslem z firmwaru.
+3. **Každá nová chyba je změna protokolu:** `kProtocolMinor` v `include/alink/protocol.hpp`
+   o jedna nahoru. Firmware 3.2 se v heartbeatu hlásí verzí 2.7; bez zvýšení knihovna u každého
+   heartbeatu varuje „newer than supported“.
 4. **Příznak pro LIS:** `Q` (quality hold) pro všechno, kvůli čemu mohou být už naměřené výsledky
    špatně: teplota, prošlá nebo špatná šarže reagencie, kalibrace. LIS takové výsledky nevydá, dokud
    je někdo neprověří. `R` jen pro zásobu reagencie (došla, otevřené víko), kdy se ještě nic
    nenaměřilo. Když si agent není jistý, má se zeptat.
 5. **`tests/data/recorded/` jsou nahrávky ze skutečných přístrojů.** Nikdy je neupravovat a nikdy
-   do nich nepřidávat ručně psané rámce. Nové případy patří do jednotkových testů
+   do nich nepřidávat ručně psané řádky. Nové případy patří do jednotkových testů
    `tests/*_test.cpp`. Když nahrávka přestane sedět, je chyba v kódu, ne v nahrávce.
 6. **Postup pro nový kód chyby** (dělá se několikrát do roka, pokaždé s jiným vývojářem):
    enum na konec, text, příznak LIS podle tabulky z bodu 4, verze protokolu, testy, oba presety.
