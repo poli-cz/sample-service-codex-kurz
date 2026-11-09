@@ -1,0 +1,8 @@
+# Hooks for this repository. Codex runs a new or changed hook only after you trust it in /hooks.
+[[hooks.PreToolUse]]
+matcher = "^(apply_patch|Bash)$"
+
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = "python .codex/hooks/protect_recorded.py"
+timeout = 20
