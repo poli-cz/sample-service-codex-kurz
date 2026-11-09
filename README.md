@@ -7,7 +7,7 @@ Není v něm žádný firemní kód ani skutečná data, smíte ho dát jakémuk
 | co | kde |
 |---|---|
 | slidy obou dnů (PDF) | [`prezentace/`](prezentace/) |
-| zadání cvičení C0 až C11 | [`cviceni/`](cviceni/README.md) |
+| zadání cvičení C0 až C13 | [`cviceni/`](cviceni/README.md) |
 | MCP server pro cvičení C7 (Python) | [`mcp-lab-server/`](mcp-lab-server/) |
 | vzorový projekt `sample-service` | tento repozitář, popis níže (anglicky) |
 
