@@ -55,6 +55,20 @@ python ../sample-service/cviceni/13-naucte-agenta/zkontroluj.py .
 
 Na nedotčeném repu vypíše „Splněno 4 z 7“: tiket ještě nikdo neřešil.
 
+Co skript měří (sedm bodů, návratový kód 0 jen při 7 z 7):
+
+| bod | co skript udělá |
+|---|---|
+| Build a testy (debug) | `cmake --preset debug`, build a `ctest` |
+| Kód 14 = Reagent lot expired | pošle programu `link-cli` řádek `ERR` s kódem 14 a čte výstup |
+| Staré kódy 0 až 13 beze změny | pošle chyby 0 až 13 a porovná text i písmeno pro LIS |
+| Kód 14 jde do LIS s příznakem Q | u chyby 14 čeká písmeno `Q` |
+| Firmware 3.2 (protokol 2.7) bez varování | pošle heartbeat s verzí 2.7 a čeká `ok` |
+| Nahrávky z přístrojů nedotčené | `git diff` složky `tests/data/recorded` proti prvnímu commitu |
+| clang-tidy (preset tidy) čistý | preset `tidy`: build a `ctest` |
+
+Na Windows trvá asi 2 minuty (staví dva presety). Rychlejší běh bez clang-tidy: přidejte `--bez-tidy`.
+
 ## Úloha pro agenta (pokaždé stejná, pokaždé nová session)
 
 > Vyřeš tiket LAB-318.
